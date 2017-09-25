@@ -9,15 +9,25 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu fx:id="menu_file" mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#menuBar_File_Close_Clicked" text="Close" />
+              <MenuItem fx:id="menu_file_close" mnemonicParsing="false" onAction="#menuBar_File_Close_Clicked" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+            <Menu fx:id="menu_language" mnemonicParsing="false" text="Language">
+               <items>
+                  <RadioMenuItem fx:id="menu_language_english" mnemonicParsing="false" onAction="#radioMenu_english_selected" selected="true" text="English">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Languages" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="menu_language_polish" mnemonicParsing="false" onAction="#radioMenu_polish_selected" text="Polish" toggleGroup="$Languages" />
+               </items>
+            </Menu>
+          <Menu fx:id="menu_help" mnemonicParsing="false" text="Help">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#menuBar_Help_Help_Clicked" text="Help" />
-              <MenuItem mnemonicParsing="false" onAction="#menuBar_Help_About_Clicked" text="About" />
+                  <MenuItem fx:id="menu_help_help" mnemonicParsing="false" onAction="#menuBar_Help_Help_Clicked" text="Help" />
+              <MenuItem fx:id="menu_help_about" mnemonicParsing="false" onAction="#menuBar_Help_About_Clicked" text="About" />
             </items>
           </Menu>
         </menus>
@@ -55,8 +65,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#button_scanNetwork_clicked" text="Scan network" GridPane.halignment="CENTER" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#button_connect_clicked" text="Connect" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                  <Button fx:id="button_scanNetwork" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#button_scanNetwork_clicked" text="Scan network" GridPane.halignment="CENTER" />
+                  <Button fx:id="button_connect" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#button_connect_clicked" text="Connect" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
                </children>
             </GridPane>
             <GridPane>
@@ -67,7 +77,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#button_monitorPosition_clicked" text="Monitor position" GridPane.halignment="CENTER" />
+                  <Button fx:id="button_monitorPosition" mnemonicParsing="false" onAction="#button_monitorPosition_clicked" text="Monitor position" GridPane.halignment="CENTER" />
                </children>
             </GridPane>
             <GridPane>
