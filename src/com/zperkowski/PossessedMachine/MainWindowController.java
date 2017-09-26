@@ -92,7 +92,7 @@ public class MainWindowController {
 
     @FXML
     private void menuBar_Help_About_Clicked() {
-
+        About.display();
     }
 
     @FXML
